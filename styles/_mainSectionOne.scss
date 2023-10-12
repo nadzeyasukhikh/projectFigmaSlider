@@ -1,0 +1,62 @@
+.mainOne {
+  background: #ebebeb;
+  margin-bottom: 140px;
+}
+
+h2 {
+  font-family: Lato;
+  font-size: 24px;
+  color: #bdbdbd;
+  padding-top: 140px;
+  padding-left: 20%;
+}
+
+.mainOneParMain {
+  font-family: Merriweather;
+  font-size: 48px;
+  color: #333;
+  margin-top: 40px;
+  padding-left: 20%;
+}
+
+.mainOneImgTxt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 102px;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 30px;
+}
+
+.mainOneImgTxtContent {
+  position: relative;
+  width: 97%;
+  height: 99%;
+}
+
+.mainOnePar {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  color: #fff;
+  font-family: Lato;
+  font-size: 24px;
+  width: 10%;
+}
+.mainOneImgTxtContent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 95, 163, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s; 
+}
+
+.mainOneImgTxtContent:hover::before {
+    opacity: 1;
+}
+
