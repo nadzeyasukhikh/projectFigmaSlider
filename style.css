@@ -44,6 +44,7 @@ width: 100%;
 justify-content: space-between;
 padding-top: 170px;
 padding-left: 19%;
+
 }
 h1 {
     font-family: Merriweather;
@@ -63,3 +64,59 @@ cursor: pointer;
 margin-top: 80px;
 width: 270px;
 }
+
+.root {
+    display: flex;
+    
+   
+}
+.headerText{
+    width: 500px;
+    position: absolute;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    opacity: 0.4;
+background: #FFF;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.headerSlideDiv{
+    display: flex;
+    gap: 30px;
+    margin-top: 450px;
+    margin-right: 1400px;
+    margin-bottom: 113px;
+}
+.headerBtn{
+    position: absolute;
+    z-index: 2;
+    left: 75%;
+    top: 72%;
+    display: flex;
+}
+.leftRightBtn{
+    width: 60px;
+    height: 60px;
+    opacity: 0.4;
+    background: #a6a9aa; 
+    border: none;  
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+.leftRightBtn img{
+    width: 15px;
+    height: 15px;
+    fill: #fff;
+}
+
+.leftRightBtn:hover{
+    opacity: 0.2;
+}
+
+
+
