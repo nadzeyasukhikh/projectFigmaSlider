@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15% 0 15%;
+}
+
+.rect {
+    width: 51px;
+    height: 118px;
+    background: #D9D9D9;
+}
+
+.navImg {
+    display: flex;
+    gap: 30px;
+}
+
+.navLink {
+    display: flex;
+    gap: 68px;
+}
+
+.navLink a {
+    color: #222;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}

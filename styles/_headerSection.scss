@@ -1,0 +1,94 @@
+header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+
+
+h1 {
+    font-family: Merriweather;
+    font-size: 48px;
+    color: #FFF;
+    width: 589px;
+}
+
+.headerTextBtn {
+    color: #FFF;
+    text-align: center;
+    font-family: Lato;
+    font-size: 18px;
+    background: #005FA3;
+    padding: 18px 0;
+    border: none;
+    cursor: pointer;
+    margin-top: 80px;
+    width: 270px;
+    flex-shrink: 0; 
+}
+
+.root {
+    position: relative; 
+  display: flex;
+    overflow: hidden; 
+    width: 588px;
+    margin-left: 370px;
+    padding-top: 170px;
+}
+.headerText {
+   
+    transition: transform 0.4s;
+}
+
+
+.circle {
+    width: 10px;
+    height: 10px;
+    opacity: 0.4;
+    background: #FFF;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.headerSlideDiv {
+    display: flex;
+    gap: 30px;
+    margin-top: 110px;
+   padding-bottom: 113px;
+    margin-left: 372px;
+}
+
+.headerBtn {
+    position: absolute;
+    z-index: 2;
+    left: 75%;
+    top: 72%;
+    display: flex;
+}
+
+.leftRightBtn {
+    width: 60px;
+    height: 60px;
+    opacity: 0.4;
+    background: #a6a9aa;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+.leftRightBtn img {
+    width: 15px;
+    height: 15px;
+    fill: #fff;
+}
+
+.leftRightBtn:hover {
+    opacity: 0.2;
+}
+
+.headerText:first-child {
+    transform: translateX(0);
+}
