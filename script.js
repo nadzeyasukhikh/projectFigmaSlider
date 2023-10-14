@@ -52,3 +52,56 @@ circleBtn.forEach((btn, ind) => {
     });
 });
 
+// второй слайдер
+
+const rooteImg = document.querySelectorAll(".rooteImg");
+const mainThreeLeft = document.querySelector(".mainThreeLeft");
+const mainThreeRight = document.querySelector(".mainThreeRight");
+const mainThreeCicle = document.querySelectorAll(".mainThreeCicle");
+const mainThreeDisplay = document.querySelector(".mainThreeDisplay");
+
+let currentRoote = 0;
+mainThreeCicle[0].style.opacity = "1";
+
+
+function updateSliderPositionTwo() {
+    const offsetTwo = `${-1 * currentRoote * 1200}px`;
+    for(let slide of rooteImg){
+    slide.style.transform = `translateX(${offsetTwo})`;
+    } 
+}
+
+mainThreeLeft.addEventListener('click', () => {
+    if (currentRoote > 0) {
+        currentRoote--;
+        updateSliderPositionTwo();
+        updateCircles();
+    }
+});
+
+mainThreeRight.addEventListener('click', () => {
+    if (currentRoote < rooteImg.length - 1) {
+        currentRoote++;
+        updateSliderPositionTwo();
+        updateCircles();
+    }
+});
+
+function updateCircles() {
+    mainThreeCicle.forEach(circle => {
+        circle.style.opacity = "0.4";
+       
+    });
+    mainThreeCicle[currentRoote].style.opacity = "1";
+   
+}
+
+mainThreeCicle.forEach((btn, ind) => {
+    btn.addEventListener("click", () => {
+        currentRoote = ind;
+        updateSliderPositionTwo();
+        updateCircles();
+    });
+});
+
+updateSliderPositionTwo();

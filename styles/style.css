@@ -276,6 +276,99 @@ h1 {
   color: #FFF;
 }
 
+.mainThree {
+  background: #ebebeb;
+}
+
+.mainThreeH {
+  padding-top: 140px;
+  padding-left: 20%;
+  color: #bdbdbd;
+  font-family: Lato;
+  font-size: 24px;
+}
+
+.mainThreePar {
+  margin-top: 40px;
+  padding-left: 20%;
+  color: #333;
+  font-family: Merriweather;
+  font-size: 48px;
+}
+
+.mainThreeDisplay {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 1200px;
+  padding-top: 100px;
+  margin-left: 20%;
+  transition: transform 0.4s;
+}
+
+.rooteImg {
+  display: flex;
+  transition: transform 0.4s;
+  width: 1200px;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.rooteImg:first-child {
+  transform: translateX(0);
+}
+
+.rooteImg img {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.mainThreeRing {
+  margin-top: 80px;
+  display: flex;
+  gap: 30px;
+  margin-left: 25%;
+}
+
+.mainThreeCicle {
+  width: 10px;
+  height: 10px;
+  opacity: 0.4;
+  background: #005fa3;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.mainThreeRingBtn {
+  padding-right: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.mainThreeBtn {
+  margin-top: 50px;
+  display: flex;
+}
+
+.mainThreeLeft,
+.mainThreeRight {
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+  background: #005fa3;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+.mainThreeLeft:hover,
+.mainThreeRight:hover {
+  opacity: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
