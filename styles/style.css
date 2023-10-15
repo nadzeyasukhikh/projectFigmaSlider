@@ -158,6 +158,7 @@ h1 {
   position: relative;
   width: 97%;
   height: 99%;
+  cursor: pointer;
 }
 
 .mainOnePar {
@@ -209,6 +210,7 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .mainTwoH {
@@ -493,6 +495,124 @@ h1 {
 .mainFourLeft:hover,
 .mainFourRight:hover {
   opacity: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 260px;
+  padding-bottom: 250px;
+  position: relative;
+}
+
+.footerTitle {
+  color: #fff;
+  font-family: Merriweather;
+  font-size: 48px;
+  margin-top: 122px;
+}
+
+.footerTxt {
+  color: #bdbdbd;
+  font-family: Lato;
+  font-size: 18px;
+  margin-top: 60px;
+  width: 430px;
+}
+
+.footerPhonEmail {
+  display: flex;
+  margin-top: 80px;
+  gap: 40px;
+}
+
+.phEm {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneTxt {
+  color: #bdbdbd;
+  font-family: Lato;
+  font-size: 21px;
+}
+
+.footerRight {
+  margin-top: 135px;
+}
+
+.nameInput {
+  display: flex;
+  gap: 20px;
+}
+
+label {
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+}
+
+input {
+  background-color: transparent;
+  font-family: Lato;
+  font-size: 21px;
+  color: #bdbdbd;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3px;
+  padding-top: 10px;
+}
+
+.labTxt {
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  margin-top: 35px;
+}
+
+textarea {
+  background-color: transparent;
+  font-family: Lato;
+  font-size: 21px;
+  color: #bdbdbd;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+.inpBtn {
+  background: #005fa3;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: Lato;
+  font-size: 18px;
+  color: #fff;
+  padding: 19px;
+  position: absolute;
+  top: 75%;
+  left: 71%;
+  cursor: pointer;
+}
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background: #f9f9f9;
+}
+
+.infoTxt {
+  color: #000;
+  text-align: right;
+  font-family: Lato;
+  font-size: 14px;
 }
 
 * {
