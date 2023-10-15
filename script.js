@@ -1,136 +1,63 @@
+class MySlider {
+    constructor(slideSelector, leftBtnSelector, rightBtnSelector, circleBtnSelector){
+      this.slides = document.querySelectorAll(slideSelector);
+      this.leftBtn = document.querySelector(leftBtnSelector);
+      this.rightBtn = document.querySelector(rightBtnSelector);
+      this.circles = document.querySelectorAll(circleBtnSelector);
 
-const slides = document.querySelectorAll('.headerText');
-const prevBtn = document.querySelector('.leftBtn');
-const nextBtn = document.querySelector('.rightBtn'); 
-const circleBtn = document.querySelectorAll(".circle");
-let currentSlide = 0;
-circleBtn[0].style.opacity = "1";
-circleBtn[0].style.backgroundColor = "white";
-
-function updateSliderPosition(slides, currentSlide) {
-    const offset = `${-1 * currentSlide * 100}%`;
-    for (let slide of slides) {
-        slide.style.transform = `translateX(${offset})`;
+      this.currentSlide = 0;
+      this.init();
     }
+
+    updateSlider() {
+        const offset = `${-1 * this.currentSlide * 100}%`;
+        for(let slide of this.slides) {
+            slide.style.transform = `translateX(${offset})`
+        }
+    }
+    updateCircleBtn() {
+        this.circles.forEach(button => button.style.opacity = "0.4");
+        this.circles[this.currentSlide].style.opacity = "1";
+    }
+    goLeft() {
+        if (this.currentSlide !== 0) {
+            this.currentSlide--;
+            this.updateSlider();
+            this.updateCircleBtn();
+        }
+}
+goRight() {
+    if (this.currentSlide < this.slides.length - 1) {
+        this.currentSlide++;
+        this.updateSlider();
+        this.updateCircleBtn();
+    }
+
 }
 
-function updateCircleBtn(circleBtn, currentSlide) {
-    circleBtn.forEach(button => {
-        button.style.opacity = "0.4"; 
+init() {
+    this.circles[0].style.opacity = "1";
+
+    this.leftBtn.addEventListener('click', () => this.goLeft());
+    this.rightBtn.addEventListener('click', () => this.goRight());
+
+    this.circles.forEach((btn, ind) => {
+        btn.addEventListener("click", () => {
+            this.currentSlide = ind;
+            this.updateSlider();
+            this.updateCircleBtn();
+        });
     });
-
-    circleBtn[currentSlide].style.opacity = "1"; 
-     
+}
 }
 
-function go_left() {
-    
-    if (currentSlide !== 0) {
-        currentSlide--;
-        updateSliderPosition(slides, currentSlide);
-        updateCircleBtn(circleBtn, currentSlide);
-    }
-}
-
-function go_right() {
-    
-    if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateSliderPosition(slides, currentSlide);
-        updateCircleBtn(circleBtn, currentSlide);
-    }
-}
-
-prevBtn.addEventListener('click',go_left);
-nextBtn.addEventListener('click', go_right);
-
-
-circleBtn.forEach((btn, ind) => {
-    btn.addEventListener("click", () => {
-        currentSlide = ind;
-        updateSliderPosition(slides, currentSlide);
-        updateCircleBtn(circleBtn, currentSlide);
-    });
-});
-
-// второй слайдер
-
-const rooteImg = document.querySelectorAll(".rooteImg");
-const mainThreeLeft = document.querySelector(".mainThreeLeft");
-const mainThreeRight = document.querySelector(".mainThreeRight");
-const mainThreeCicle = document.querySelectorAll(".mainThreeCicle");
-
-
-let currentRoote = 0;
-mainThreeCicle[0].style.opacity = "1";
-
-function goLeft() {
-    
-    if (currentRoote !== 0) {
-        currentRoote--;
-        updateSliderPosition(rooteImg, currentRoote);
-        updateCircleBtn(mainThreeCicle, currentRoote);
-    }
-}
-
-function goRight() {
-    
-    if (currentRoote < rooteImg.length - 1) {
-        currentRoote++;
-        updateSliderPosition(rooteImg, currentRoote);
-        updateCircleBtn(mainThreeCicle, currentRoote);
-    }
-}
-mainThreeLeft.addEventListener('click', goLeft)
-mainThreeRight.addEventListener('click', goRight)
-   
-
-
-
-mainThreeCicle.forEach((btn, ind) => {
-    btn.addEventListener("click", () => {
-        currentRoote = ind;
-        updateSliderPosition(rooteImg, currentRoote);
-        updateCircleBtn(mainThreeCicle, currentRoote)
-    });
-});
+const slide1 = new MySlider(".headerText", ".leftBtn", ".rightBtn",".circle" );
+const slide2 = new MySlider(".rooteImg", ".mainThreeLeft", ".mainThreeRight", ".mainThreeCicle" )
+const slide3 = new MySlider(".rootFourDisplay", ".mainFourLeft", ".mainFourRight", ".mainFourCicle")
 
 
 
 
-// третий слайдер
 
-const rootFourDisplay = document.querySelectorAll(".rootFourDisplay"); // Change to querySelectorAll
-const mainFourLeft = document.querySelector(".mainFourLeft");
-const mainFourRight = document.querySelector(".mainFourRight");
-const mainFourCicle = document.querySelectorAll(".mainFourCicle");
 
-let currentFourRoot = 0;
-mainFourCicle[0].style.opacity = "1";
 
-function goLeftFour() {
-    if (currentFourRoot !== 0) {
-        currentFourRoot--;
-        updateSliderPosition(rootFourDisplay, currentFourRoot);
-        updateCircleBtn(mainFourCicle, currentFourRoot);
-    }
-}
-
-function goRightFour() {
-    if (currentFourRoot < rootFourDisplay.length - 1) { 
-        currentFourRoot++;
-        updateSliderPosition(rootFourDisplay, currentFourRoot);
-        updateCircleBtn(mainFourCicle, currentFourRoot);
-    }
-}
-
-mainFourLeft.addEventListener('click', goLeftFour);
-mainFourRight.addEventListener('click', goRightFour);
-
-mainFourCicle.forEach((btn, ind) => {
-    btn.addEventListener("click", () => {
-        currentFourRoot = ind;
-        updateSliderPosition(rootFourDisplay, currentFourRoot);
-        updateCircleBtn(mainFourCicle, currentFourRoot);
-    });
-});
